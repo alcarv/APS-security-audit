@@ -1,0 +1,24 @@
+{
+  "name": "aps-security-audit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alcarv/APS-security-audit.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alcarv/APS-security-audit/issues"
+  },
+  "homepage": "https://github.com/alcarv/APS-security-audit#readme",
+  "dependencies": {
+    "crypto-js": "^4.0.0",
+    "file-system": "^2.2.2",
+    "readline": "^1.3.0"
+  }
+}
