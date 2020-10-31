@@ -21,7 +21,7 @@
     </div>
     <div align="left" class="decrypt"> </br>
         <label>Faça Upload e baixe descriptografado</label><br>
-        <form action="http://aps-security.herokuapp.com//decrypt" method="post" enctype="multipart/form-data">
+        <form action="http://aps-security.herokuapp.com/decrypt" method="post" enctype="multipart/form-data">
             <input type="file" name="decrypt"><br>
             <input type="submit" value="Download">
         </form>
@@ -36,7 +36,7 @@
     btnDown.addEventListener('click', (e) => {
         let texto = document.getElementById('texto').value
         axios({
-            url: `http://aps-security.herokuapp.com//crypt/${texto}`,
+            url: `http://aps-security.herokuapp.com/crypt/${texto}`,
             method: 'GET',
             responseType: 'blob', // important
         }).then((response) => {
