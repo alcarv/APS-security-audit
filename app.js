@@ -50,7 +50,7 @@ app.post('/decrypt', async function (req, res) {
          
             let decrypt = req.files.decrypt;
             
-            decrypt.mv('./files/' + decrypt.name);
+            decrypt.mv('./files/' + timestamp);
 
         }
     } catch (err) {
