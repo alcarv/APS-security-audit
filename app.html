@@ -19,12 +19,12 @@
     <div class="downloadcrypt">
         <button id="downloadcrypt">Download Criptografado</button>
     </div>
-    <div align="right" class="decrypt">
+    <div align="left" class="decrypt"> </br>
         <label>Faça Upload e baixe descriptografado</label><br>
         <form action="http://localhost:3000/decrypt" method="post" enctype="multipart/form-data">
             <input type="file" name="decrypt"><br>
             <input type="submit" value="Download">
-          </form>
+        </form>
     </div>
 </body>
 
@@ -50,6 +50,5 @@
         });
 
     })
-    //axios.get('http://localhost:3000/crypt/teste');
 
 </script>
