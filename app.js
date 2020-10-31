@@ -20,6 +20,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(morgan('dev'));
 
+app.get('/', async function (req, res) {
+    res.sendFile(__dirname + "/frontend/index.html")
+});
+
 app.get('/crypt/:texto', async function (req, res) {
     req.params; 
     let txt = req.params.texto;
