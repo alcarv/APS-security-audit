@@ -28,10 +28,7 @@ app.get('/crypt/:texto', async function (req, res) {
     let mystr = mykey.update(`${txt}`, 'utf8', 'hex')
     mystr += mykey.final('hex');
     encryText = mystr;
-    //console.log(textoCript)
     fs.appendFile(`${timestamp}`, `${mystr} \n`, async function (err) {
-        //console.log(textoCript);
-        //console.log('Encriptografado!');
         res.download(`${timestamp}`)
     });
 
@@ -39,8 +36,6 @@ app.get('/crypt/:texto', async function (req, res) {
 });
 
 app.post('/decrypt', async function (req, res) {
-    let nomeArq
-    let txtDes;
     try {
         if(!req.files) {
             res.send({
@@ -48,22 +43,10 @@ app.post('/decrypt', async function (req, res) {
                 message: 'No file uploaded'
             });
         } else {
-            //Use the name of the input field (i.e. "avatar") to retrieve the uploaded file
+         
             let decrypt = req.files.decrypt;
             
-            //Use the mv() method to place the file in upload directory (i.e. "uploads")
             decrypt.mv('./files/' + decrypt.name);
-
-           /* fs.readFile(`/files/${decrypt.name}`, 'utf8', function (err,data) {
-                if (err) {
-                  return console.log(err);
-                }
-                nomeArq = decrypt.name;
-                txtDes = data;
-                console.log(nomeArq)
-                console.log(txtDes)
-
-              }); */
 
         }
     } catch (err) {
@@ -80,9 +63,6 @@ app.post('/decrypt', async function (req, res) {
 
 });
 
-/*app.get('/download', function (req, res) {
-    res.download('Crypt-Decrypt.txt')
-})*/
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
