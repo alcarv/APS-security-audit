@@ -10,7 +10,7 @@ const morgan = require('morgan');
 const _ = require('lodash');
 const timestamp = new Date().getTime();
 let encryText;
-let count;
+let count = 1;
 
 app.use(fileUpload({
     createParentPath: true
@@ -29,15 +29,16 @@ app.get('/crypt/:texto', async function (req, res) {
     req.params; 
     let txt = req.params.texto;
     
+    console.log(count)
     let mykey = crypto.createCipher('aes-128-cbc', 'mypassword', 'hex');
     let mystr = mykey.update(`${txt}`, 'utf8', 'hex')
     mystr += mykey.final('hex');
     encryText = mystr;
-    fs.appendFile(`${timestamp} - ${count}`, `${mystr} \n`, async function (err) {
-        res.download(`${timestamp}`)
+    fs.appendFile(`${timestamp}-${count}.txt`, `${mystr} \n`, async function (err) {
+        res.download(`${timestamp}-${count}.txt`)
+        count ++;
     });
 
-    count ++
 
 });
 
@@ -52,7 +53,7 @@ app.post('/decrypt', async function (req, res) {
          
             let decrypt = req.files.decrypt;
             
-            decrypt.mv('./files/' + timestamp);
+            decrypt.mv('./files/' + timestamp + count);
 
         }
     } catch (err) {
