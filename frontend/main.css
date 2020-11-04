@@ -1,0 +1,22 @@
+.active-amber-textarea-2 textarea.md-textarea {
+    border-bottom: 2px solid #068ad6;
+    box-shadow: 0 1px 0 0 #068ad6;
+  }
+  .active-amber-textarea-2.md-form label.active {
+    font-size: large;
+    color: #068ad6;
+  }
+  .active-amber-textarea-2.md-form label {
+    color: #068ad6;
+    font-size: large;
+    font-weight: bold;
+  }
+  .active-amber-textarea-2.md-form textarea.md-textarea:focus:not([readonly])+label {
+    color: #068ad6;
+    font-size: large;
+  }
+  
+  #txtUpload {
+      font-size: large;
+      font-weight: bold;
+  }
