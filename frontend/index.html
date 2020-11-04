@@ -7,25 +7,33 @@
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 
 <body>
-    <div class="crypt">
-        <label>Qual texto deseja Criptografar ?</label><br>
-        <textarea id="texto" name="texto" class="texto" rows="4" cols="50">
-        </textarea>
+        <div class="md-form amber-textarea active-amber-textarea-2">
+            <textarea id="texto" class="md-textarea form-control" rows="3"></textarea>
+            <label for="texto">Qual texto deseja criptografar ?</label>
+        </div>
+    </br>
+    <div class="d-flex justify-content-center" id="downcrypt">
+        <button class="btn btn-dark btn-lg" id="downloadcrypt">Download Criptografado</button>
     </div>
-    <div class="downloadcrypt">
-        <button id="downloadcrypt">Download Criptografado</button>
+    </br></br></br></br>
+    <div class="d-flex justify-content-center">
+        <label id="txtUpload">Faça Upload e baixe descriptografado</label><br>
     </div>
-    <div align="left" class="decrypt"> </br>
-        <label>Faça Upload e baixe descriptografado</label><br>
-        <form action="http://aps-security.herokuapp.com/decrypt" method="post" enctype="multipart/form-data">
-            <input type="file" name="decrypt"><br>
-            <input type="submit" value="Download">
-        </form>
+    <div class="d-flex justify-content-center">
+    <form action="http://aps-security.herokuapp.com/decrypt" method="post" enctype="multipart/form-data">
+        <input type="file" name="decrypt"><br>
+    </form>
+    </div></br>
+    <div class="d-flex justify-content-center">
+    <button type="submit" class="btn btn-danger btn-lg">Download</button>
     </div>
+
 </body>
 
 </html>
